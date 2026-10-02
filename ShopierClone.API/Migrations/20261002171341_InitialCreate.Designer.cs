@@ -11,7 +11,7 @@ using ShopierClone.API.Data;
 namespace ShopierClone.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261001111549_InitialCreate")]
+    [Migration("20261002171341_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
