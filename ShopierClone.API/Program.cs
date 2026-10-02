@@ -8,7 +8,15 @@ builder.Services.AddControllers();
 
 // 2. Swagger / OpenAPI desteği (API Dokümantasyonu)
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "ShopierClone API",
+        Version = "v1",
+        Description = "3D Baskı E-Ticaret Backend Projesi"
+    });
+});
 
 // 3. SQLite Veritabanı Servis Kaydı
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -20,7 +28,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShopierClone API v1");
+    });
 }
 
 app.UseHttpsRedirection();
