@@ -31,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "ShopierClone API v1");
+        c.RoutePrefix = string.Empty; // Bu ayar Swagger'ın doğrudan ana dizinde (örn: http://localhost:5215/) açılmasını sağlar
     });
 }
 
