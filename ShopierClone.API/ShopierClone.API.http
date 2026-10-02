@@ -1,0 +1,6 @@
+@ShopierClone.API_HostAddress = http://localhost:5215
+
+GET {{ShopierClone.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
